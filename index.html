@@ -1,362 +1,300 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="keywords" content="">
-		<meta name="description" content="">
-		<title>DevPrinces</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-		<link rel="stylesheet" href="css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/templatemo_style.css">
-		<link rel="stylesheet" href="css/font-awesome.min.css">
-		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,300' rel='stylesheet' type='text/css'>		
-        
-	</head>
-	<body id="top" data-spy="scroll" data-target=".navbar-collapse">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./build/tailwind.css">    
+    <title>DevPrinces</title>
+</head>
+<body>
+    <!-- Header -->
+    <header class="text-gray-600 body-font" id="header">
+      <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+        <a href="#header" class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
+          <span class="ml-3 text-2xl">DevPrinces</span>
+        </a>
+        <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
+          <a class="mr-5 hover:text-indigo-600 text-indigo-500 uppercase text-md" href="#header">Home</a>
+          <a class="mr-5 hover:text-indigo-600 text-indigo-500 uppercase text-md" href="#about">About</a>
+          <a class="mr-5 hover:text-indigo-600 text-indigo-500 uppercase text-md" href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+    <!-- End of Header -->
+<!--start of feature  -->
+<section class="text-gray-600 body-font">
+  <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+    <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">
+      <img class="object-cover object-center rounded" alt="hero" src="./img/features.svg">
+    </div>
+    <div class="lg:flex-grow md:w-1/2 lg:pl-24 md:pl-16 flex flex-col md:items-start md:text-left items-center text-center">
+      <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium uppercase text-gray-900">SOME FEATURES</h1>
+      <p class="mb-8 leading-relaxed">DevPrinces is free responsive mobile template. Feel free to use this layout for any website project. Please tell your friends about us. Thank you.</p>
+    </div>
+  </div>
+</section>
+<!--end of feature  -->
 
-	<!-- start of navigation -->
-	<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-		<div class="container">
-			<div class="navbar-header">
-				<button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-					<span class="icon icon-bar"></span>
-					<span class="icon icon-bar"></span>
-					<span class="icon icon-bar"></span>
-				</button>
-				<a href="#top" class="navbar-brand">DevPrinces</a>
-			</div>
-			<div class="collapse navbar-collapse">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#top" class="smoothScroll">HOME</a></li>
-					<li><a href="#features" class="smoothScroll">FEATURES</a></li>
-          <li><a href="#about" class="smoothScroll">ABOUT</a></li>
-					<li><a href="#team" class="smoothScroll">OUR TEAM</a></li>
-					<li><a href="#portfolio" class="smoothScroll">PORTFOLIOS</a></li>
-					<li><a href="#contact" class="smoothScroll">CONTACT</a></li>
-				</ul>
-			</div>
-		</div>
-	</nav>
-	<!-- end of navigation -->
 
-<!--Start of Slideshow-->
-	<section id="home" class="text-center">
-	  <div class="templatemo_headerimage">
-	    <div class="flexslider">
-	      <ul class="slides">
-	        <li>
-	        	<img src="images/slider/1.jpg" alt="Slide 1">
-	        	<div class="slider-caption">
-				    <div class="templatemo_homewrapper">
-				      <h1>Creative Web Design Agency</h1>
-				      <h2>Web Design &amp; code your dream</h2>
-						<a href="#portfolio" class="smoothScroll templatemo-slider-btn btn btn-default">Learn More</a>
-				    </div>
-			  	</div>
-	        </li>
-	        <li>
-	        	<img src="images/slider/2.jpg" alt="Slide 2">
-	        	<div class="slider-caption">
-				    <div class="templatemo_homewrapper">
-				      <h1>Flex Slider, CSS Flexbox</h1>
-				      <h2>Work on all modern browsers, IE 10+</h2>
-						<a href="#team" class="smoothScroll templatemo-slider-btn btn btn-default">Meet Our Team</a>	
-				    </div>
-			  	</div>
-	        </li>
-	        <li>
-	        	<img src="images/slider/3.jpg" alt="Slide 3">
-	        	<div class="slider-caption">
-				    <div class="templatemo_homewrapper">
-				      	<h1>Special Thanks</h1>
-				      	<h2> Flexslider, Tailwind, Bootstrap, Vue,  jquery</h2>
-						<a href="#about" class="smoothScroll templatemo-slider-btn btn btn-default">About Us</a>	
-				    </div>
-			  	</div>
-	        </li>
-	      </ul>
-	    </div>
-	  </div>				
-	</section>	
-	<!-- start templatemo features -->
-	<section id="features" class="features text-center">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-2"></div>
-				<div class="col-md-8">
-					<h2>SOME FEATURES</h2>
-					<p>DevPrinces is free responsive mobile template from <span class="blue">template</span><span class="green">mo</span>.com website. Feel free to use this layout for any website project. Please tell your friends about us. Thank you.</p>
-				</div>
-				<div class="col-md-12"></div>
-				<div class="col-sm-6 col-md-3">
-					<a href="#"><i class="fa fa-laptop"></i></a>
-						<h3>Responsive Design</h3>
-						<p>We provide a web development approach that creates dynamic changes to the appearance of a website.</p>
-				</div>
-        <div class="col-sm-6 col-md-3">
-					<a href="#"><i class="fa fa-code"></i></a>
-						<h3>Tailwind Css</h3>
-						<p>Tailwind Css is basically a utility-first CSS framework for rapidly building custom user interfaces.</p>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<a href="#"><i class="fa fa-font"></i></a>
-						<h3>Google Web Fonts</h3>
-						<p>Ut rutrum feugiat neque. Etiam elementum laoreet mauris. Cum sociis natoque penatibus et magnis dis parturient montes.</p>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<a href="#"><i class="fa fa-user"></i></a>
-						<h3>User Friendly</h3>
-						<p>Cum sociis natoque penatibus et magnis dis parturient montes. Etiam elementum laoreet mauris. Ut rutrum feugiat neque.</p>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- end templatemo features -->
 
-	<!-- start templatemo about -->
-	<section id="about">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-2"></div>
-				<div class="col-md-8 text-center">
-					<h2>ABOUT US</h2>
-					<p>Devprinces makes it easy for everyone to create a beautiful, professional web presence.
 
-            Promote your business, showcase your art, set up an online shop or just test out new ideas.</p>
-				</div>
-				<div class="col-md-12"></div>
-				<div class="col-sm-6 col-md-6 info">
-					<h3>We are DevPrinces</h3>
-					<h4>WEB DESIGN &AMP; DEVELOPMENT AGENCY</h4>
-					<p>Our graphic tools allows everyone to get online with a personalized, professional web presence. Whether you’re  a newbie or even an expert, you’ll find the features and solutions you need to build a professional website with total creative freedom.</p>
-					<p>Our exceptional design capabilities create a unique ecosystem. Partners, developers, web designers, and other online professionals can effectively market their apps and services to millions through devprinces.</p>
-				</div>
-				<div class="col-sm-6 col-md-6 skills">
-					<span>HTML5</span>
-						<span class="pull-right">100%</span>
-							<div class="progress">
-								<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
-							</div>
-					<span>CSS3</span>
-						<span class="pull-right">100%</span>
-							<div class="progress">
-								<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 100%;"></div>
-							</div>
-					<span>TAILWIND</span>
-						<span class="pull-right">80%</span>
-							<div class="progress">
-								<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%;"></div>
-							</div>
-					<span>JQUERY</span>
-						<span class="pull-right">90%</span>
-							<div class="progress">
-								<div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 90%;"></div>
-							</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- end templatemo about -->
+<!--start of step  -->
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-24 mx-auto flex flex-wrap">
+    <div class="flex relative pt-10 pb-20 sm:items-center md:w-2/3 mx-auto">
+      <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
+        <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+      </div>
+      <div class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-indigo-500 text-white relative z-10 title-font font-medium text-sm">1</div>
+      <div class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
+        <div class="flex-shrink-0 w-24 h-24 bg-indigo-100 text-indigo-500 rounded-full inline-flex items-center justify-center">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-12 h-12" viewBox="0 0 24 24">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+          </svg>
+        </div>
+        <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
+          <h2 class="font-medium title-font text-gray-900 mb-1 text-xl">Shooting Stars</h2>
+          <p class="leading-relaxed">VHS cornhole pop-up, try-hard 8-bit iceland helvetica. Kinfolk bespoke try-hard cliche palo santo offal.</p>
+        </div>
+      </div>
+    </div>
+    <div class="flex relative pb-20 sm:items-center md:w-2/3 mx-auto">
+      <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
+        <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+      </div>
+      <div class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-indigo-500 text-white relative z-10 title-font font-medium text-sm">2</div>
+      <div class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
+        <div class="flex-shrink-0 w-24 h-24 bg-indigo-100 text-indigo-500 rounded-full inline-flex items-center justify-center">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-12 h-12" viewBox="0 0 24 24">
+            <path d="M22 12h-4l-3 9L9 3l-3 9H2"></path>
+          </svg>
+        </div>
+        <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
+          <h2 class="font-medium title-font text-gray-900 mb-1 text-xl">The Catalyzer</h2>
+          <p class="leading-relaxed">VHS cornhole pop-up, try-hard 8-bit iceland helvetica. Kinfolk bespoke try-hard cliche palo santo offal.</p>
+        </div>
+      </div>
+    </div>
+    <div class="flex relative pb-20 sm:items-center md:w-2/3 mx-auto">
+      <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
+        <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+      </div>
+      <div class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-indigo-500 text-white relative z-10 title-font font-medium text-sm">3</div>
+      <div class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
+        <div class="flex-shrink-0 w-24 h-24 bg-indigo-100 text-indigo-500 rounded-full inline-flex items-center justify-center">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-12 h-12" viewBox="0 0 24 24">
+            <circle cx="12" cy="5" r="3"></circle>
+            <path d="M12 22V8M5 12H2a10 10 0 0020 0h-3"></path>
+          </svg>
+        </div>
+        <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
+          <h2 class="font-medium title-font text-gray-900 mb-1 text-xl">User Friendly</h2>
+          <p class="leading-relaxed">We provide a web development approach that creates dynamic changes to the appearance of a website.</p>
+        </div>
+      </div>
+    </div>
+    <div class="flex relative pb-10 sm:items-center md:w-2/3 mx-auto">
+      <div class="h-full w-6 absolute inset-0 flex items-center justify-center">
+        <div class="h-full w-1 bg-gray-200 pointer-events-none"></div>
+      </div>
+      <div class="flex-shrink-0 w-6 h-6 rounded-full mt-10 sm:mt-0 inline-flex items-center justify-center bg-indigo-500 text-white relative z-10 title-font font-medium text-sm">4</div>
+      <div class="flex-grow md:pl-8 pl-6 flex sm:items-center items-start flex-col sm:flex-row">
+        <div class="flex-shrink-0 w-24 h-24 bg-indigo-100 text-indigo-500 rounded-full inline-flex items-center justify-center">
+          <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-12 h-12" viewBox="0 0 24 24">
+            <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"></path>
+            <circle cx="12" cy="7" r="4"></circle>
+          </svg>
+        </div>
+        <div class="flex-grow sm:pl-6 mt-6 sm:mt-0">
+          <h2 class="font-medium title-font text-gray-900 mb-1 text-xl">User Friendly</h2>
+          <p class="leading-relaxed">We provide a web development approach that creates dynamic changes to the appearance of a website.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--end of step  -->
 
-	<!-- start templatemo team -->
-	<section id="team" class="text-center">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-2"></div>
-				<div class="col-md-8">
-					<h2>MEET THE TEAM</h2>
-					<p>Etiam elementum laoreet mauris. Ut rutrum feugiat neque. Suspendisse viverra gravida nulla. Duis sed enim vitae metus nonummy venenatis. Curabitur semper rutrum sapien. Mauris luctus.</p>
-				</div>
-				<div style="text-align:center">
-          <div class="col-sm-6 col-md-3">
-            <img src="images/member1.jpg" class="img-responsive" alt="team 1">
-              <h3>TRACY</h3>
-              <p>DESIGNER &amp; DEVELOPER </p>
-          </div>
-          <div class="col-sm-6 col-md-3">
-            <img src="images/member4.jpg" class="img-responsive" alt="team 4">
-              <h3>LINDA</h3>
-              <p>MANAGER &amp; DIRECTOR</p>
+<!--start of about  -->
+<section class="text-gray-600 body-font" id="about">
+  <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+    <div class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+      <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900 uppercase">About Us</h1>
+      <p class="mb-8 leading-relaxed">Our exceptional design capabilities create a unique ecosystem. Partners, developers, web designers, and other online professionals can effectively market their apps and services to millions through devprinces.</p>
+    </div>
+    <div class="lg:max-w-lg lg:w-full md:w-1/2 w-5/6">
+      <img class="object-cover object-center rounded" alt="hero" src="./img/about.svg">
+    </div>
+  </div>
+</section>
+<!-- end of about -->
+
+<!--start of Team -->
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-24 mx-auto">
+    <div class="flex flex-col text-center w-full mb-20">
+      <h1 class="text-2xl font-medium title-font mb-4 text-gray-900 tracking-widest">OUR TEAM</h1>
+      <p class="lg:w-2/3 mx-auto leading-relaxed text-base">Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical gentrify, subway tile poke farm-to-table. Franzen you probably haven't heard of them.</p>
+    </div>
+    <div class="flex flex-wrap -m-4">
+      <div class="p-4 lg:w-1/2">
+        <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
+          <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="./img/team01.jpg">
+          <div class="flex-grow sm:pl-8">
+            <h2 class="title-font font-medium text-lg text-gray-900">Adabanya Prince</h2>
+            <h3 class="text-gray-500 mb-3">Founder / UI Developer</h3>
+            <p class="mb-4">DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
+            <span class="inline-flex">
+              <a class="text-indigo-500 hover:text-indigo-600">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                </svg>
+              </a>
+              <a class="ml-2 text-indigo-500 hover:text-indigo-600">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                  <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                </svg>
+              </a>
+              <a class="ml-2 text-indigo-500 hover:text-indigo-600">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                  <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
+                </svg>
+              </a>
+            </span>
           </div>
         </div>
-				
-			</div>
-		</div>
-	</section>
-	<!-- end templatemo team -->
+      </div>
+      <div class="p-4 lg:w-1/2">
+        <div class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left">
+          <img alt="team" class="flex-shrink-0 rounded-lg w-48 h-48 object-cover object-center sm:mb-0 mb-4" src="https://dummyimage.com/201x201">
+          <div class="flex-grow sm:pl-8">
+            <h2 class="title-font font-medium text-lg text-gray-900">Alper Kamu</h2>
+            <h3 class="text-gray-500 mb-3">Designer</h3>
+            <p class="mb-4">DIY tote bag drinking vinegar cronut adaptogen squid fanny pack vaporware.</p>
+            <span class="inline-flex">
+              <a class="text-indigo-500 hover:text-indigo-600">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                  <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                </svg>
+              </a>
+              <a class="ml-2 text-indigo-500 hover:text-indigo-600">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                  <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+                </svg>
+              </a>
+              <a class="ml-2 text-indigo-500 hover:text-indigo-600">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                  <path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"></path>
+                </svg>
+              </a>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--end of team  -->
+<!--start of portfolio  -->
+<section class="text-gray-600 body-font">
+  <div class="container px-5 py-24 mx-auto flex flex-wrap">
+    <div class="flex w-full mb-20 flex-wrap">
+      <h1 class="sm:text-3xl text-2xl font-medium title-font text-gray-900 lg:w-1/3 lg:mb-0 mb-4 uppercase">portfolio</h1>
+      <p class="lg:pl-6 lg:w-2/3 mx-auto leading-relaxed text-base">Our graphic tools allows everyone to get online with a personalized, professional web presence. Whether you’re a newbie or even an expert, you’ll find the features and solutions you need to build a professional website with total creative freedom.</p>
+    </div>
+    <div class="flex flex-wrap md:-m-2 -m-1">
+      <div class="flex flex-wrap w-1/2">
+        <div class="md:p-2 p-1 w-1/2">
+          <img alt="gallery" class="w-full object-cover h-full object-center block" src="./img/port06.jpeg">
+        </div>
+        <div class="md:p-2 p-1 w-1/2">
+          <img alt="gallery" class="w-full object-cover h-full object-center block" src="./img/port05.jpeg">
+        </div>
+        <div class="md:p-2 p-1 w-full">
+          <img alt="gallery" class="w-full h-full object-cover object-center block" src="./img/port04.jpeg">
+        </div>
+      </div>
+      <div class="flex flex-wrap w-1/2">
+        <div class="md:p-2 p-1 w-full">
+          <img alt="gallery" class="w-full h-full object-cover object-center block" src="./img/port02.jpeg">
+        </div>
+        <div class="md:p-2 p-1 w-1/2">
+          <img alt="gallery" class="w-full object-cover h-full object-center block" src="./img/port03.jpeg">
+        </div>
+        <div class="md:p-2 p-1 w-1/2">
+          <img alt="gallery" class="w-full object-cover h-full object-center block" src="./img/port01.jpeg">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- end of portfolio -->
+<!-- start of contact -->
+<section class="text-gray-600 body-font relative" id="contact">
+  <div class="absolute inset-0 bg-gray-300">
+    <iframe width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" title="map" scrolling="no" src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=%C4%B0zmir+(My%20Business%20Name)&ie=UTF8&t=&z=14&iwloc=B&output=embed" style="filter: grayscale(1) contrast(1.2) opacity(0.4);"></iframe>
+  </div>
+  <div class="container px-5 py-24 mx-auto flex">
+    <div class="lg:w-1/3 md:w-1/2 bg-white rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 relative z-10 shadow-md">
+      <h2 class="text-gray-900 text-lg mb-1 font-medium title-font">CONTACT US</h2>
+      <div class="relative mb-4">
+        <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
+        <input type="name" id="name" name="name" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+      </div>
+      <div class="relative mb-4">
+        <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
+        <input type="email" id="email" name="email" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+      </div>
+      <div class="relative mb-4">
+        <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
+        <textarea id="message" name="message" class="w-full bg-white rounded border border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+      </div>
+      <button class="text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">Send Message</button>
+     
+    </div>
+  </div>
+</section>
+<!-- end of contact -->
+    <!--start footer  -->
+    <footer class="text-gray-600 body-font">
+      <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
+        <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900" href="#header">
+          <span class="ml-3 text-xl">DevPrinces</span>
+        </a>
+        <p class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">© 2019 DevPrinces
+        </p>
+          <p class="ml-2 mr-2"><i class="fa fa-envelope-o"></i> <a href="mailto:devprinces@gmail.com">&bull; devprinces@gmail.com</a></p>
+          <p><i class="fa fa-map-marker"></i>&bull; Lagos, Nigeria.</p>
+        <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+          <a class="text-indigo-500 hover:text-indigo-600">
+            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+              <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+            </svg>
+          </a>
+          <a class="ml-3 text-indigo-500 hover:text-indigo-600">
+            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+              <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"></path>
+            </svg>
+          </a>
+          <a class="ml-3 text-indigo-500 hover:text-indigo-600">
+            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+              <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+            </svg>
+          </a>
+          <a class="ml-3 text-indigo-500 hover:text-indigo-600">
+            <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+              <path stroke="none" d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"></path>
+              <circle cx="4" cy="4" r="2" stroke="none"></circle>
+            </svg>
+          </a>
+        </span>
+      </div>
+    </footer>
+    <!-- end of footer -->
+                  
+            
 
-	<!-- start templatemo portfolio -->
-	<section id="portfolio">
-		<div class="container text-center">
-			<div class="row">
-				<div class="col-md-2"></div>
-				<div class="col-md-8">
-					<h2>PORTFOLIO</h2>
-					<p>Etiam elementum laoreet mauris. Ut rutrum feugiat neque. Suspendisse viverra gravida nulla. Duis sed enim vitae metus nonummy venenatis. Curabitur semper rutrum sapien.</p>
-				</div>
-				<div class="col-md-12"></div>
-				<div class="col-sm-6 col-md-3">
-					<div class="image_thumb">
-						<img src="images/p1.jpg" class="img-responsive" alt="work">
-							<div class="image_overlay">
-								<a href="#"><i class="fa fa-thumbs-o-up"></i></a>
-							</div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<div class="image_thumb">
-						<img src="images/p2.jpg" class="img-responsive" alt="work">
-							<div class="image_overlay">
-								<a href="#"><i class="fa fa-thumbs-o-up"></i></a>
-							</div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<div class="image_thumb">
-						<img src="images/p3.jpg" class="img-responsive" alt="work">
-							<div class="image_overlay">
-								<a href="#"><i class="fa fa-thumbs-o-up"></i></a>
-							</div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<div class="image_thumb">
-						<img src="images/p4.jpg" class="img-responsive" alt="work">
-							<div class="image_overlay">
-									<a href="#"><i class="fa fa-thumbs-o-up"></i></a>
-							</div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<div class="image_thumb">
-						<img src="images/p5.jpg" class="img-responsive" alt="work">
-							<div class="image_overlay">
-								<a href="#"><i class="fa fa-thumbs-o-up"></i></a>
-							</div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<div class="image_thumb">
-						<img src="images/p6.jpg" class="img-responsive" alt="work">
-							<div class="image_overlay">
-								<a href="#"><i class="fa fa-thumbs-o-up"></i></a>
-							</div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<div class="image_thumb">
-						<img src="images/p7.jpg" class="img-responsive" alt="work">
-							<div class="image_overlay">
-								<a href="#"><i class="fa fa-thumbs-o-up"></i></a>
-							</div>
-					</div>
-				</div>
-				<div class="col-sm-6 col-md-3">
-					<div class="image_thumb">
-						<img src="images/p8.jpg" class="img-responsive" alt="work">
-							<div class="image_overlay">
-								<a href="#"><i class="fa fa-thumbs-o-up"></i></a>
-							</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- end templatemo portfolio -->
-
-	<!-- start templatemo contact -->
-	<section id="contact">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-2"></div>
-				<div class="col-md-8 text-center">
-					<h2>CONTACT US</h2>
-					<p>Suspendisse potenti. Etiam elementum laoreet mauris. Ut rutrum feugiat neque. Suspendisse viverra gravida nulla. Duis sed enim vitae metus nonummy venenatis. Curabitur semper rutrum sapien.</p>
-				</div>
-				<div class="col-md-12"></div>
-				<div class="col-sm-6 col-md-4 address">
-					<h3>OUR ADDRESS</h3>
-					<p><i class="fa fa-phone"></i>  070-188-500-87 </p>
-					<p><i class="fa fa-envelope-o"></i> <a href="mailto:devprinces@gmail.com">devprinces@gmail.com</a></p>
-					<p><i class="fa fa-globe"></i> <a href="#">www.devrpinces.com</a></p>
-					<p><i class="fa fa-map-marker"></i> Lagos, Nigeria.</p>
-				</div>
-				<div class="col-sm-6 col-md-8">
-					<form action="#" method="post" role="form">
-						<div class="col-md-6">
-							<input type="text" class="form-control" placeholder="Name">
-						</div>
-						<div class="col-md-6">
-							<input type="email" class="form-control" placeholder="Email">
-						</div>
-						<div class="col-md-12">
-							<input type="text" class="form-control" placeholder="Subject">
-						</div>
-						<div class="col-md-12">
-							<textarea class="form-control" rows="6" placeholder="Message"></textarea>
-						</div>
-						<div class="col-md-12">
-							<input type="submit" value="SEND MESSAGE" class="form-control">
-						</div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- end templatemo contact -->
-
-	<!-- start templatemo footer -->
-	<footer class="text-center">
-		<div class="container">
-			<div class="row">
-				<div class="social_icon">
-					<a href="#" class="fa fa-facebook"></a>
-					<a href="#" class="fa fa-twitter"></a>
-					<a href="#" class="fa fa-linkedin"></a>
-					<a href="#" class="fa fa-tumblr"></a>
-				</div>
-				<p>Copyright © 2021 DevPrinces</p>
-			</div>
-		</div>
-	</footer>
-	<!-- end templatemo footer -->
-
-	<!-- start back to top -->
-	<a href="#top" class="go-top"><i class="fa fa-chevron-up fa-1x"></i></a>
-	<!-- end back to top -->
-	
-	<script src="js/jquery.js"></script>
-	<script src="js/bootstrap.min.js"></script>
-	<script src="js/smoothscroll.js"></script>
-	<script src="js/jquery.flexslider.js"></script>
-
-	<!-- start templatemo back to top js -->
-	<script>
-		$(document).ready(function() {
-			// FlexSlider 
-		  	$('.flexslider').flexslider({
-		      animation: "fade",
-		      directionNav: false
-		  	});
-
-			// Show or hide the sticky footer button
-			$(window).scroll(function() {
-				if ($(this).scrollTop() > 200) {
-					$('.go-top').fadeIn(200);
-				} else {
-					$('.go-top').fadeOut(200);
-				}
-			});		
-			// Animate the scroll to top
-			$('.go-top').click(function(event) {
-				event.preventDefault();
-				$('html, body').animate({scrollTop: 0}, 300);
-			})
-		});
-	</script>
-	<!-- end templatemo back to top js -->
-
-	</body>
+</body>
 </html>
