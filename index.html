@@ -12,79 +12,82 @@
   <title>My Portfolio</title>
 </head>
 
-<body class="bg-gray-200">
+<body>
   <!-- Header -->
-  <div class="max-w-screen-xl mx-auto bg-white">
-    <header class="text-gray-600 body-font" id="header">
-      <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
-      <div class="w-full text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800">
-        <div x-data="{ open: false }"
-          class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
-          <div class="p-4 flex flex-row items-center justify-between">
-            <a href=""
-              class="text-lg font-semibold tracking-widest text-gray-900 uppercase rounded-lg dark-mode:text-white focus:outline-none focus:shadow-outline">MY
-              PORTFOLIO</a>
 
-            <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
-              <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
-                <path x-show="!open" fill-rule="evenodd"
-                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
-                  clip-rule="evenodd"></path>
-                <path x-show="open" fill-rule="evenodd"
-                  d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
-                  clip-rule="evenodd"></path>
-              </svg>
-            </button>
-          </div>
-          <nav :class="{'flex': open, 'hidden': !open}"
-            class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
-            <a href="#header"
-              class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-              href="#">Home</a>
-            <a href="#about"
-              class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none mr-2 focus:shadow-outline"
-              href="#">About</a>
-            <a href="#contact"
-              class="px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-yellow-300 rounded-lg dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-              href="">Contacts</a>
-          </nav>
+
+
+  <header class="text-gray-600 body-font shadow-sm fixed w-full bg-white z-10" id="header">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+    <div class="w-full text-gray-700 bg-white dark-mode:text-gray-200 dark-mode:bg-gray-800  max-w-screen-xl mx-auto">
+      <div x-data="{ open: false }"
+        class="flex flex-col max-w-screen-xl px-4 mx-auto md:items-center md:justify-between md:flex-row md:px-6 lg:px-8">
+        <div class="py-4 flex flex-row items-center justify-between">
+          <a href=""
+            class="text-lg font-semibold tracking-widest text-gray-900 uppercase dark-mode:text-white focus:outline-none focus:shadow-outline">MY
+            PORTFOLIO
+          </a>
+
+          <button class="md:hidden rounded-lg focus:outline-none focus:shadow-outline" @click="open = !open">
+            <svg fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6">
+              <path x-show="!open" fill-rule="evenodd"
+                d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+                clip-rule="evenodd"></path>
+              <path x-show="open" fill-rule="evenodd"
+                d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+                clip-rule="evenodd"></path>
+            </svg>
+          </button>
+        </div>
+        <nav :class="{'flex': open, 'hidden': !open}"
+          class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
+          <a href="#header"
+            class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+            href="#">Home</a>
+          <a href="#about"
+            class="px-4 py-2 mt-2 text-sm font-semibold bg-transparent rounded-lg dark-mode:bg-transparent dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none mr-2 focus:shadow-outline"
+            href="#">About</a>
+          <a href="#contact"
+            class="px-4 py-2 mt-2 text-sm font-semibold text-gray-900 bg-yellow-300 rounded-lg dark-mode:bg-gray-700 dark-mode:hover:bg-gray-600 dark-mode:focus:bg-gray-600 dark-mode:focus:text-white dark-mode:hover:text-white dark-mode:text-gray-200 md:mt-0 hover:text-gray-900 focus:text-gray-900 hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
+            href="">Contacts</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+  <!-- End of Header -->
+
+  <!-- hero -->
+  <section class="bg-white bg-opacity-30 py-10 sm:py-16 lg:py-24">
+    <div class="px-4 sm:px-6 lg:px-8 max-w-screen-xl mx-auto">
+      <div class="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
+        <div>
+          <p class="text-base font-semibold tracking-wider text-blue-600 uppercase">A social media for learners</p>
+          <h1 class="mt-4 text-4xl font-bold text-black lg:mt-8 sm:text-6xl xl:text-8xl">Some Features</h1>
+          <p class="mt-4 text-base text-black lg:mt-8 sm:text-xl">Design and build your own high-quality websites.
+            Whether you’re promoting your business, showcasing your work, opening your store or starting a blog—you
+            can do it all with Devprinces.</p>
+
+          <a href="#form" title=""
+            class="inline-flex items-center px-6 py-4 mt-8 font-semibold text-black transition-all duration-200 bg-yellow-300 rounded-full lg:mt-16 hover:bg-yellow-400 focus:bg-yellow-400"
+            role="button">
+            Connect with me
+            <svg class="w-6 h-6 ml-8 -mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+              stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </a>
+
+
+        </div>
+
+        <div>
+          <img class="w-full sm\:hidden" src="./img/featured01.jpg" alt="" />
         </div>
       </div>
-    </header>
-    <!-- End of Header -->
+    </div>
+  </section>
 
-    <!-- hero -->
-    <section class="bg-[#FCF8F1] bg-opacity-30 py-10 sm:py-16 lg:py-24">
-      <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
-        <div class="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
-          <div>
-            <p class="text-base font-semibold tracking-wider text-blue-600 uppercase">A social media for learners</p>
-            <h1 class="mt-4 text-4xl font-bold text-black lg:mt-8 sm:text-6xl xl:text-8xl">Some Features</h1>
-            <p class="mt-4 text-base text-black lg:mt-8 sm:text-xl">Design and build your own high-quality websites.
-              Whether you’re promoting your business, showcasing your work, opening your store or starting a blog—you
-              can do it all with Devprinces.</p>
-
-            <a href="#form" title=""
-              class="inline-flex items-center px-6 py-4 mt-8 font-semibold text-black transition-all duration-200 bg-yellow-300 rounded-full lg:mt-16 hover:bg-yellow-400 focus:bg-yellow-400"
-              role="button">
-              Connect with me
-              <svg class="w-6 h-6 ml-8 -mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
-                stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
-                  d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-              </svg>
-            </a>
-
-
-          </div>
-
-          <div>
-            <img class="w-full sm\:hidden" src="./img/featured01.jpg" alt="" />
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
 
 
 
@@ -131,12 +134,12 @@
 
 
   <!-- about me -->
-  <section class="text-gray-600 body-font" id="about">
-    <div class="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
+  <section class="text-gray-600 body-font bg-gray-200" id="about">
+    <div class="container flex px-5 py-24 md:flex-row flex-col items-center max-w-screen-xl mx-auto">
       <div
         class="lg:flex-grow md:w-1/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
-        <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">About us</h1>
-        <p class="mb-8 leading-relaxed">Our exceptional design capabilities create a unique ecosystem. Partners,
+        <h1 class="sm:text-4xl text-3xl mb-4 font-bold text-gray-900">About us</h1>
+        <p class="mb-8 leading-relaxed font-semibold">Our exceptional design capabilities create a unique ecosystem. Partners,
           developers, web designers, and other online professionals can effectively market their apps and services to
           millions through devprinces.</p>
       </div>
@@ -149,7 +152,7 @@
 
 
   <!-- contact form -->
-  <section class="py-10 bg-gray-900 sm:py-16 lg:py-24" id="form">
+  <section class="py-10 bg-gray-900 sm:py-16 lg:py-24 z-0" id="form">
     <div class="max-w-6xl px-4 mx-auto sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 md:items-stretch md:grid-cols-2 gap-x-12 lg:gap-x-20 gap-y-10">
         <div class="flex flex-col justify-between lg:py-5">
@@ -222,7 +225,7 @@
                   <div>
                     <label for="Name" class="text-base font-medium text-gray-900"> Your name:</label>
                     <div class="mt-2.5 relative">
-                      <input type="text" name="name" id="name" placeholder="Enter your name"
+                      <input type="text" name="name" id="name" placeholder="Enter your name" required
                         class="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:ring-orange-500 focus:border-orange-500 caret-orange-500" />
                     </div>
                   </div>
@@ -230,7 +233,7 @@
                   <div>
                     <label for="Email" class="text-base font-medium text-gray-900"> Email address </label>
                     <div class="mt-2.5 relative">
-                      <input type="text" name="email" id="email" placeholder="john@example.com"
+                      <input type="text" name="email" id="email" placeholder="john@example.com" required
                         class="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md focus:outline-none focus:ring-orange-500 focus:border-orange-500 caret-orange-500" />
                     </div>
                   </div>
@@ -238,7 +241,7 @@
                   <div>
                     <label for="Message" class="text-base font-medium text-gray-900"> Project brief: </label>
                     <div class="mt-2.5 relative">
-                      <textarea name="message" id="message" placeholder="Enter your project brief"
+                      <textarea name="message" id="message" placeholder="Enter your project brief" required
                         class="block w-full px-4 py-4 text-black placeholder-gray-500 transition-all duration-200 bg-white border border-gray-200 rounded-md resize-y focus:outline-none focus:ring-orange-500 focus:border-orange-500 caret-orange-500"
                         rows="4"></textarea>
                     </div>
@@ -288,7 +291,8 @@
           <blockquote class="mt-6">
             <p class="text-lg leading-relaxed text-white">
 
-              I am an experienced technology entrepreneur and front-end web developer. Prior to developing devprinces, we founded several successful start-ups. 
+              I am an experienced technology entrepreneur and front-end web developer. Prior to developing devprinces,
+              we founded several successful start-ups.
             </p>
           </blockquote>
 
@@ -306,7 +310,7 @@
 
 
   <!--start footer  -->
-  <footer class="text-gray-600">
+  <footer class="text-gray-600  max-w-screen-xl mx-auto">
     <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
       <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900" href="#header">
         <span class="ml-3 text-xl">DevPrinces</span>
@@ -323,8 +327,8 @@
             <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
           </svg>
         </a>
-       
-        
+
+
         <a href="https://www.linkedin.com/in/princewilladabanya/" class="ml-3 text-indigo-500 hover:text-indigo-600">
           <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"
             class="w-5 h-5" viewBox="0 0 24 24">
