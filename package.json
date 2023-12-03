@@ -26,8 +26,8 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "./node_modules/.bin/netlify-lambda serve src",
+    "test": "react-scripts test",
+    "start": "react-scripts start",
     "build": "vite build"
   },
   "eslintConfig": {
