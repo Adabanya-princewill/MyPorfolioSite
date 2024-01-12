@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+    margin: 0;
+    background-color: white;
+}
+
+.feature-section {
+    height: 100vh;
+}
+
+.id-1 {
+    background-image: url(../public/assets/japaanow.svg);
+    object-fit: cover;
+    background-repeat: no-repeat;
+}
+.id-2 {
+    background-image: url(../public/assets/yellowdot.png);
+    object-fit: contain;
+    background-repeat: no-repeat;
+}
+
+.id-3 {
+    background-image: url(../public/assets/cyberfleet.png);
+    object-fit: cover;
+    background-repeat: no-repeat;
+}
+
+.id-4 {
+    background-image: url(../public/assets/countrymanager.png);
+    object-fit: cover;
+    background-repeat: no-repeat;
+}
