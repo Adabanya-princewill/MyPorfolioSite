@@ -16,7 +16,8 @@ export function FooterWithSitemap() {
                     </Typography>
                     <div className="flex items-center gap-4 text-blue-gray-900 sm:justify-center">
                         <Typography as="a" className="flex gap-4 cursor-pointer items-center opacity-80 transition-opacity hover:opacity-100">
-                            <IoIosCall /> 080108514620                        </Typography>
+                            <IoIosCall /> 08108514620
+                        </Typography>
                         <Typography as="a" target="_blank" href="mailto:adabanyaprince@gmail.com" className="opacity-80 transition-opacity hover:opacity-100">
                             <MdEmail />
                         </Typography>
