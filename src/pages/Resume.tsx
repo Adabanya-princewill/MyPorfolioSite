@@ -16,7 +16,7 @@ const skills = [
   {
     title: "Frontend",
     items:
-      "React, Next.js, Vue.js, Angular, TypeScript, Tailwind CSS, Material UI, Sass, Bootstrap, Styled Components, Redux, Zustand",
+      "React, Next.js, Vue.js, TypeScript, Tailwind CSS, Material UI, Sass, Bootstrap, Styled Components, Redux, Zustand",
   },
   {
     title: "Backend",

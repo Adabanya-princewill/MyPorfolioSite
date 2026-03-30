@@ -206,7 +206,7 @@ export default function PortfolioHero({
             type="button"
             className="inline-flex items-center gap-2 rounded-full px-3 py-2 text-xs font-medium uppercase tracking-[0.22em] text-white transition-colors duration-300 hover:bg-white/10 sm:px-4"
           >
-            <span className="hidden sm:inline">.</span>
+            <span className="hidden sm:inline text-black">.</span>
           </button>
         </nav>
       </header>
@@ -276,7 +276,8 @@ export default function PortfolioHero({
               style={{ fontFamily: "'Antic', sans-serif" }}
             />
             <p className="max-w-2xl text-center text-xs uppercase tracking-[0.3em] text-neutral-600 sm:text-sm">
-              Java, Spring Boot, React, Next.js, Vue.js, Oracle, PostgreSQL
+              Java, Spring Boot, React, Next.js, Vue.js, TypeScript, Oracle,
+              PostgreSQL
             </p>
           </div>
         </div>
