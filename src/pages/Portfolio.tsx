@@ -1,5 +1,5 @@
 import { type ReactNode } from "react";
-import { motion, useScroll, useSpring } from "framer-motion";
+import { motion, useReducedMotion, useScroll, useSpring } from "framer-motion";
 import {
   ArrowUpRight,
   BriefcaseBusiness,
@@ -30,25 +30,95 @@ const revealTransition = {
   ease: [0.16, 1, 0.3, 1] as const,
 };
 
+type RevealVariant =
+  | "rise"
+  | "glideLeft"
+  | "glideRight"
+  | "softScale"
+  | "lift";
+
+const getRevealFrames = (variant: RevealVariant) => {
+  switch (variant) {
+    case "glideLeft":
+      return {
+        hidden: { opacity: 0, x: -34, y: 10 },
+        visible: { opacity: 1, x: 0, y: 0 },
+      };
+    case "glideRight":
+      return {
+        hidden: { opacity: 0, x: 34, y: 10 },
+        visible: { opacity: 1, x: 0, y: 0 },
+      };
+    case "softScale":
+      return {
+        hidden: { opacity: 0, y: 18, scale: 0.975 },
+        visible: { opacity: 1, y: 0, scale: 1 },
+      };
+    case "lift":
+      return {
+        hidden: { opacity: 0, y: 34, scale: 0.99 },
+        visible: { opacity: 1, y: 0, scale: 1 },
+      };
+    case "rise":
+    default:
+      return {
+        hidden: { opacity: 0, y: 28 },
+        visible: { opacity: 1, y: 0 },
+      };
+  }
+};
+
 const Reveal = ({
   children,
   className,
   delay = 0,
+  variant = "rise",
+  amount = 0.2,
 }: {
   children: ReactNode;
   className?: string;
   delay?: number;
+  variant?: RevealVariant;
+  amount?: number;
 }) => (
-  <motion.div
+  <RevealInner
     className={className}
-    initial={{ opacity: 0, y: 28 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, amount: 0.2 }}
-    transition={{ ...revealTransition, delay }}
+    delay={delay}
+    variant={variant}
+    amount={amount}
   >
     {children}
-  </motion.div>
+  </RevealInner>
 );
+
+const RevealInner = ({
+  children,
+  className,
+  delay,
+  variant,
+  amount,
+}: {
+  children: ReactNode;
+  className?: string;
+  delay: number;
+  variant: RevealVariant;
+  amount: number;
+}) => {
+  const shouldReduceMotion = useReducedMotion();
+  const frames = getRevealFrames(variant);
+
+  return (
+    <motion.div
+      className={className}
+      initial={shouldReduceMotion ? false : frames.hidden}
+      whileInView={frames.visible}
+      viewport={{ once: false, amount }}
+      transition={{ ...revealTransition, delay }}
+    >
+      {children}
+    </motion.div>
+  );
+};
 
 const SectionHeading = ({
   eyebrow,
@@ -104,7 +174,7 @@ const Portfolio = () => {
 
         <section className="relative -mt-8 pb-10 sm:-mt-12 sm:pb-16">
           <div className="mx-auto max-w-[1240px] px-4 sm:px-6">
-            <Reveal>
+            <Reveal variant="softScale" amount={0.35}>
               <div className="premium-card rounded-[2rem] px-6 py-7 sm:px-8 sm:py-8">
                 <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
                   <div>
@@ -124,9 +194,9 @@ const Portfolio = () => {
                     {heroSignals.map((signal, index) => (
                       <motion.div
                         key={signal.label}
-                        initial={{ opacity: 0, y: 22 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, amount: 0.35 }}
+                        initial={{ opacity: 0, y: 18, scale: 0.98 }}
+                        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                        viewport={{ once: false, amount: 0.35 }}
                         transition={{
                           ...revealTransition,
                           delay: 0.1 + index * 0.08,
@@ -150,7 +220,7 @@ const Portfolio = () => {
 
         <section id="about" className="scroll-mt-24 py-24 sm:py-28">
           <div className="mx-auto max-w-[1240px] px-4 sm:px-6">
-            <Reveal>
+            <Reveal variant="glideLeft">
               <SectionHeading
                 eyebrow="About"
                 title="Full-stack delivery with a strong product eye."
@@ -159,7 +229,11 @@ const Portfolio = () => {
             </Reveal>
 
             <div className="mt-14 grid gap-6 lg:grid-cols-[1.06fr_0.94fr]">
-              <Reveal className="premium-card rounded-[2rem] px-6 py-7 sm:px-8 sm:py-9">
+              <Reveal
+                className="premium-card rounded-[2rem] px-6 py-7 sm:px-8 sm:py-9"
+                variant="glideLeft"
+                amount={0.28}
+              >
                 <p className="font-display text-[clamp(1.6rem,3vw,2.6rem)] font-bold uppercase leading-[1.02] tracking-[-0.06em] text-white">
                   I build clean interfaces backed by solid systems.
                 </p>
@@ -201,7 +275,12 @@ const Portfolio = () => {
                   const Icon = principle.icon;
 
                   return (
-                    <Reveal key={principle.title} delay={index * 0.08}>
+                    <Reveal
+                      key={principle.title}
+                      delay={index * 0.08}
+                      variant="glideRight"
+                      amount={0.28}
+                    >
                       <motion.div
                         whileHover={{ y: -4 }}
                         className="premium-card rounded-[1.7rem] px-5 py-6 sm:px-6"
@@ -230,7 +309,7 @@ const Portfolio = () => {
 
         <section id="stack" className="scroll-mt-24 py-24 sm:py-28">
           <div className="mx-auto max-w-[1240px] px-4 sm:px-6">
-            <Reveal>
+            <Reveal variant="rise">
               <SectionHeading
                 eyebrow="Tech Stack"
                 title="The stack behind the work."
@@ -240,7 +319,12 @@ const Portfolio = () => {
 
             <div className="mt-14 grid gap-5 lg:grid-cols-3">
               {stackColumns.map((column, index) => (
-                <Reveal key={column.title} delay={index * 0.08}>
+                <Reveal
+                  key={column.title}
+                  delay={index * 0.08}
+                  variant="softScale"
+                  amount={0.28}
+                >
                   <motion.div
                     whileHover={{ y: -5 }}
                     className="premium-card rounded-[1.8rem] px-6 py-7"
@@ -269,7 +353,11 @@ const Portfolio = () => {
               ))}
             </div>
 
-            <Reveal className="mt-6 premium-card rounded-[1.8rem] px-6 py-7 sm:px-8">
+            <Reveal
+              className="mt-6 premium-card rounded-[1.8rem] px-6 py-7 sm:px-8"
+              variant="softScale"
+              amount={0.3}
+            >
               <div className="grid gap-4 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
                 <div>
                   <p className="font-mono text-[11px] uppercase tracking-[0.42em] text-[#C3E41D]">
@@ -296,7 +384,7 @@ const Portfolio = () => {
 
         <section id="experience" className="scroll-mt-24 py-24 sm:py-28">
           <div className="mx-auto max-w-[1240px] px-4 sm:px-6">
-            <Reveal>
+            <Reveal variant="glideLeft">
               <SectionHeading
                 eyebrow="Experience"
                 title="Real teams. Real systems. Real delivery."
@@ -305,7 +393,11 @@ const Portfolio = () => {
             </Reveal>
 
             <div className="mt-14 grid gap-6 lg:grid-cols-[1fr_1fr]">
-              <Reveal className="premium-card rounded-[2rem] px-6 py-7 sm:px-8">
+              <Reveal
+                className="premium-card rounded-[2rem] px-6 py-7 sm:px-8"
+                variant="glideLeft"
+                amount={0.28}
+              >
                 <div className="relative pl-6">
                   <div className="absolute bottom-2 left-[0.55rem] top-2 w-px bg-white/10" />
                   <div className="space-y-9">
@@ -332,7 +424,12 @@ const Portfolio = () => {
 
               <div className="grid gap-4">
                 {experienceSignals.map((signal, index) => (
-                  <Reveal key={signal.title} delay={index * 0.08}>
+                  <Reveal
+                    key={signal.title}
+                    delay={index * 0.08}
+                    variant="glideRight"
+                    amount={0.28}
+                  >
                     <div className="premium-card rounded-[1.7rem] px-6 py-6">
                       <p className="font-display text-[1.7rem] font-bold uppercase leading-[1] tracking-[-0.05em] text-white">
                         {signal.title}
@@ -351,7 +448,7 @@ const Portfolio = () => {
                   </Reveal>
                 ))}
 
-                <Reveal delay={0.18}>
+                <Reveal delay={0.18} variant="softScale" amount={0.35}>
                   <div className="premium-card rounded-[1.7rem] px-6 py-6">
                     <div className="flex flex-wrap items-center gap-5 text-sm uppercase tracking-[0.22em] text-neutral-500">
                       <div className="flex items-center gap-2">
@@ -372,7 +469,11 @@ const Portfolio = () => {
 
         <section id="contact" className="scroll-mt-24 py-24 sm:py-28">
           <div className="mx-auto max-w-[1240px] px-4 sm:px-6">
-            <Reveal className="premium-card rounded-[2.2rem] px-6 py-8 sm:px-10 sm:py-10">
+            <Reveal
+              className="premium-card rounded-[2.2rem] px-6 py-8 sm:px-10 sm:py-10"
+              variant="lift"
+              amount={0.22}
+            >
               <div className="grid gap-10 lg:grid-cols-[1fr_0.92fr] lg:items-start">
                 <div>
                   <p className="font-mono text-[11px] uppercase tracking-[0.46em] text-[#C3E41D]">
@@ -440,9 +541,14 @@ const Portfolio = () => {
                             ? "noreferrer"
                             : undefined
                         }
-                        initial={{ opacity: 0, y: 24 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true, amount: 0.3 }}
+                        initial={{
+                          opacity: 0,
+                          y: 22,
+                          scale: 0.985,
+                          x: index % 2 === 0 ? -12 : 12,
+                        }}
+                        whileInView={{ opacity: 1, y: 0, scale: 1, x: 0 }}
+                        viewport={{ once: false, amount: 0.3 }}
                         transition={{
                           ...revealTransition,
                           delay: 0.1 + index * 0.08,

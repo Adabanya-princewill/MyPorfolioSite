@@ -92,6 +92,8 @@ export default function PortfolioHero({
   onDownloadResume,
 }: PortfolioHeroProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [showHeaderBorder, setShowHeaderBorder] = useState(false);
+  const heroRef = useRef<HTMLDivElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
@@ -111,6 +113,28 @@ export default function PortfolioHero({
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [isMenuOpen]);
+
+  useEffect(() => {
+    const updateHeaderBorder = () => {
+      const heroBottom =
+        heroRef.current?.getBoundingClientRect().bottom ?? window.innerHeight;
+      const shouldShowBorder = heroBottom <= 96;
+
+      setShowHeaderBorder((current) =>
+        current === shouldShowBorder ? current : shouldShowBorder,
+      );
+    };
+
+    updateHeaderBorder();
+
+    window.addEventListener("scroll", updateHeaderBorder, { passive: true });
+    window.addEventListener("resize", updateHeaderBorder);
+
+    return () => {
+      window.removeEventListener("scroll", updateHeaderBorder);
+      window.removeEventListener("resize", updateHeaderBorder);
+    };
+  }, []);
 
   const navigateTo = (href: string) => {
     setIsMenuOpen(false);
@@ -134,14 +158,23 @@ export default function PortfolioHero({
   };
 
   return (
-    <div className="relative min-h-screen overflow-hidden bg-black text-white">
+    <div
+      ref={heroRef}
+      className="relative min-h-screen overflow-hidden bg-black text-white"
+    >
       <div
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(195,228,29,0.18),transparent_22%),radial-gradient(circle_at_80%_20%,rgba(255,255,255,0.08),transparent_24%),linear-gradient(180deg,rgba(255,255,255,0.02),transparent_35%)]"
       />
 
       <header className="fixed left-0 right-0 top-0 z-50 px-4 py-5 sm:px-6">
-        <nav className="mx-auto flex max-w-screen-2xl items-center justify-between rounded-full border border-white/10 bg-black/55 px-2 py-2 backdrop-blur-xl sm:px-4">
+        <nav
+          className={`mx-auto flex max-w-screen-2xl items-center justify-between rounded-full border px-2 py-2 backdrop-blur-xl transition-[border-color,background-color,box-shadow] duration-300 sm:px-4 ${
+            showHeaderBorder
+              ? "border-white/10 bg-black/55 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]"
+              : "border-transparent bg-black/30"
+          }`}
+        >
           <div className="relative">
             <button
               ref={buttonRef}
