@@ -1,11 +1,6 @@
 import { type ReactNode } from "react";
 import { motion, useReducedMotion, useScroll, useSpring } from "framer-motion";
-import {
-  ArrowUpRight,
-  BriefcaseBusiness,
-  CloudCog,
-  MapPin,
-} from "lucide-react";
+import { ArrowUpRight, BriefcaseBusiness, MapPin } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import PortfolioHero from "@/components/ui/portfolio-hero";
@@ -13,16 +8,12 @@ import { cn } from "@/lib/utils";
 
 import {
   aboutPrinciples,
-  architectureFlow,
-  architecturePrinciples,
-  caseStudies,
   contactChannels,
   engineeringLenses,
   experienceSignals,
   experienceTimeline,
   heroSignals,
   stackColumns,
-  supportingProjects,
 } from "./portfolioData";
 
 const revealTransition = {
@@ -30,12 +21,7 @@ const revealTransition = {
   ease: [0.16, 1, 0.3, 1] as const,
 };
 
-type RevealVariant =
-  | "rise"
-  | "glideLeft"
-  | "glideRight"
-  | "softScale"
-  | "lift";
+type RevealVariant = "rise" | "glideLeft" | "glideRight" | "softScale" | "lift";
 
 const getRevealFrames = (variant: RevealVariant) => {
   switch (variant) {
