@@ -6,8 +6,6 @@
 # build outputs
 
 *.tsbuildinfo
-/AdabanyaPrincewillCV.pdf
-/public/AdabanyaPrincewillCV.pdf
 
 # testing
 /coverage
