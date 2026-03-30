@@ -4,7 +4,7 @@
 .pnp.js
 
 # build outputs
-/dist
+
 *.tsbuildinfo
 /AdabanyaPrincewillCV.pdf
 /public/AdabanyaPrincewillCV.pdf
