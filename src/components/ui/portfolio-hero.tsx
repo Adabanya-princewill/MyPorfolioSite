@@ -25,9 +25,7 @@ const menuItems: MenuItem[] = [
   { label: "HOME", href: "#hero", highlight: true },
   { label: "ABOUT", href: "#about" },
   { label: "STACK", href: "#stack" },
-  { label: "PROJECTS", href: "#projects" },
   { label: "EXPERIENCE", href: "#experience" },
-  { label: "ARCHITECTURE", href: "#architecture" },
   { label: "CONTACT", href: "#contact" },
 ];
 
