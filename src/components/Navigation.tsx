@@ -1,20 +1,20 @@
-import { useState, useEffect } from "react";
+import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
+
+const navItems = [
+  { id: "hero", label: "Home", href: "#" },
+  { id: "about", label: "About", href: "#about" },
+  { id: "projects", label: "Projects", href: "#projects" },
+  { id: "experience", label: "Experience", href: "#experience" },
+  { id: "contact", label: "Contact", href: "#contact" },
+];
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("hero");
   const [isScrolled, setIsScrolled] = useState(false);
-
-  const navItems = [
-    { id: "hero", label: "Home", href: "#" },
-    { id: "about", label: "About", href: "#about" },
-    { id: "projects", label: "Projects", href: "#projects" },
-    { id: "experience", label: "Experience", href: "#experience" },
-    { id: "contact", label: "Contact", href: "#contact" },
-  ];
 
   useEffect(() => {
     const handleScroll = () => {
