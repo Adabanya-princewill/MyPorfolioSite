@@ -110,23 +110,72 @@ const SectionHeading = ({
   eyebrow,
   title,
   description,
+  variant = "default",
+  titleLines,
 }: {
   eyebrow: string;
   title: string;
   description: string;
-}) => (
-  <div className="max-w-5xl">
-    <p className="font-mono text-[11px] uppercase tracking-[0.46em] text-[#C3E41D]">
-      {eyebrow}
-    </p>
-    <h2 className="mt-5 max-w-5xl font-display text-[clamp(2.2rem,6vw,4.8rem)] font-bold uppercase leading-[0.92] tracking-[-0.08em] text-white">
-      {title}
-    </h2>
-    <p className="mt-6 max-w-3xl text-base leading-8 text-neutral-400 sm:text-lg">
-      {description}
-    </p>
-  </div>
-);
+  variant?: "default" | "banded";
+  titleLines?: string[];
+}) => {
+  const isBanded = variant === "banded";
+
+  return (
+    <div className={cn("max-w-5xl", isBanded && "max-w-6xl")}>
+      <p className="font-mono text-[11px] uppercase tracking-[0.46em] text-[#C3E41D]">
+        {eyebrow}
+      </p>
+
+      {isBanded && titleLines?.length ? (
+        <h2 aria-label={title} className="mt-5">
+          <span className="section-heading-banded">
+            {titleLines.map((line, index) => {
+              const hasDot = index === titleLines.length - 1 && line.endsWith(".");
+              const lineText = hasDot ? line.slice(0, -1) : line;
+
+              return (
+                <span
+                  key={line}
+                  className={cn(
+                    "section-heading-banded__line",
+                    index === 0
+                      ? "section-heading-banded__line--top"
+                      : "section-heading-banded__line--bottom",
+                  )}
+                >
+                  <span
+                    aria-hidden
+                    className="section-heading-banded__shadow"
+                  />
+                  <span className="relative z-[1] block">
+                    {lineText}
+                    {hasDot ? (
+                      <span className="section-heading-banded__dot">.</span>
+                    ) : null}
+                  </span>
+                </span>
+              );
+            })}
+          </span>
+        </h2>
+      ) : (
+        <h2 className="mt-5 max-w-5xl font-display text-[#C3E41D] text-[clamp(2.2rem,6vw,4.8rem)] font-bold uppercase leading-[0.92] tracking-[-0.08em] ">
+          {title}
+        </h2>
+      )}
+
+      <p
+        className={cn(
+          "mt-6 max-w-3xl text-base leading-8 text-neutral-400 sm:text-lg",
+          isBanded && "max-w-2xl",
+        )}
+      >
+        {description}
+      </p>
+    </div>
+  );
+};
 
 const Portfolio = () => {
   const { scrollYProgress } = useScroll();
@@ -299,6 +348,8 @@ const Portfolio = () => {
               <SectionHeading
                 eyebrow="Tech Stack"
                 title="The stack behind the work."
+                variant="banded"
+                titleLines={["The stack behind the", "work."]}
                 description="The tools I use most across frontend, backend, and delivery."
               />
             </Reveal>
